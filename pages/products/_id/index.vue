@@ -16,7 +16,6 @@
 <script>
   export default {
     asyncData(context) {
-//      console.log(context.app);
 
       return context.app.$axios.$get('http://localhost:9000/products/' + context.params.id)
         .then(response => {
@@ -27,7 +26,7 @@
         .catch(e => context.error(e))
     },
     head: {
-      title: 'A Blog Post'
+      title: 'The Single Product Page'
     }
   };
 </script>

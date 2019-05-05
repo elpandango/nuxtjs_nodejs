@@ -15,18 +15,18 @@ const createStore = () => {
       }
     },
     actions: {
-      nuxtServerInit(vuexContext, context) {
-        return context.app.$axios
-          .$get("http://localhost:9000/products")
-          .then(data => {
-            const postsArray = [];
-            for (const key in data) {
-              postsArray.push({ ...data[key] });
-            }
-            vuexContext.commit("setProducts", postsArray);
-          })
-          .catch(e => context.error(e));
-      },
+      // nuxtServerInit(vuexContext, context) {
+      //   return context.app.$axios
+      //     .$get("http://localhost:9000/products")
+      //     .then(data => {
+      //       const postsArray = [];
+      //       for (const key in data) {
+      //         postsArray.push({ ...data[key] });
+      //       }
+      //       vuexContext.commit("setProducts", postsArray);
+      //     })
+      //     .catch(e => context.error(e));
+      // },
       setProducts(vuexContext, products) {
         vuexContext.commit("setProducts", products);
       },

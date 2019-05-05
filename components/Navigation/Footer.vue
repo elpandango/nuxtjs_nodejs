@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="footer">
     FR Footer
   </div>
 </template>
@@ -12,3 +12,11 @@
     }
   }
 </script>
+
+<style scoped="">
+  .footer {
+    padding: 20px 0;
+    background-color: #ebebeb;
+    text-align: center;
+  }
+</style>

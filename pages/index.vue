@@ -13,22 +13,18 @@
     components: {
       ProductList
     },
-    methods: {
-      async fetchData() {
-        const response = await this.$axios.$get('http://localhost:9000/products');
-        console.log(response);
-      }
+    asyncData(context) {
+
+      return context.app.$axios.$get('http://localhost:9000/products/')
+        .then(response => {
+          return {
+            loadedProducts: response
+          }
+        })
+        .catch(e => context.error(e))
     },
-    computed: {
-      loadedProducts() {
-        return this.$store.getters.loadedProducts
-      }
-    }
-//    created() {
-//      this.$store.dispatch('setProducts', this.loadedProducts);
-//      console.log(this.$store.getters.loadedProducts);
-//      this.fetchData();
-//    }
+    methods: {},
+    computed: {}
   }
 </script>
 
